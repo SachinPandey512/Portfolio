@@ -1,0 +1,142 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  animation: gradientShift 15s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: fadeInUp 0.7s ease forwards;
+  transition: all 0.4s ease;
+}
+
+.glass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1, h2 {
+  margin: 0;
+  color: #00e6e6;
+  text-align: center;
+}
+
+h2 {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 20px;
+}
+
+ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #00ffff;
+}
+
+ul li:hover {
+  transform: translateX(10px);
+  color: #00ffff;
+}
+
+.resume-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #00bcd4;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.resume-button:hover {
+  background: #0097a7;
+}
+
+.contact p {
+  margin: 5px 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .app {
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+}
